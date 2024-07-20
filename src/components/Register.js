@@ -24,7 +24,7 @@ const Register = () => {
       })
       .catch((err) => {
         alert(err.response.data.message);
-        console.log(err.response);
+        // console.log(err.response);
       });
   };
 
@@ -37,16 +37,16 @@ const Register = () => {
       instance
         .post("/sign-up", { name, email })
         .then((res) => {
-          console.log(res.data);
+        //   console.log(res.data);
           alert(res.data.message);
           setFlag(true);
         })
         .catch((err) => {
-          console.log(err);
+        //   console.log(err);
           alert(err.response.data.message);
         });
     } catch (error) {
-      console.log(error);
+    //   console.log(error);
       alert("something went wrong");
     }
   };

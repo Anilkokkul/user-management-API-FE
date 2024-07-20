@@ -26,7 +26,7 @@ const Login = () => {
       })
       .catch((err) => {
         alert(err.response.data.message);
-        console.log(err.response);
+        // console.log(err.response);
       });
   };
 
@@ -39,16 +39,17 @@ const Login = () => {
       instance
         .post("/request-login-otp", { email })
         .then((res) => {
-          console.log(res.data);
+          //   console.log(res.data);
           alert(res.data.message);
           setFlag(true);
         })
         .catch((err) => {
-          console.log(err);
+          //   console.log(err);
           alert(err.response.data.message);
         });
     } catch (error) {
       console.log(error);
+      alert("something went wrong...");
     }
   };
 
