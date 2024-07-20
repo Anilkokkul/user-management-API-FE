@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { instance } from "../index";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [flag, setFlag] = useState(false);
   const [otp, setOtp] = useState("");
 
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!otp) {
@@ -18,6 +20,7 @@ const Login = () => {
         if (res.status === "200") {
           setFlag(false);
         }
+        navigate("/profile");
         setOtp("");
         setEmail("");
       })
