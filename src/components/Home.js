@@ -48,6 +48,13 @@ const Home = () => {
         console.log(err);
         alert(err.response.data.message);
       });
+    setUserData({
+      name: "",
+      mobileNumber: "",
+      address: "",
+      state: "",
+      country: "",
+    });
   };
 
   return (
